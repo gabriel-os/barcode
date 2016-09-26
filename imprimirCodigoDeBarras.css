@@ -1,5 +1,9 @@
 @CHARSET "UTF-8";
 
+.codigo{
+     position: relative;
+}
+
  .divCode {
      float: left;
      height: 0.45in;	 /*size*/
@@ -8,6 +12,9 @@
 .labelCode {
     text-align: center;
     font-size: medium;
+    position:absolute;
+    left: 0px;
+    bottom: -70%;
 }
 
 .bar1 {border-left: 1px solid black;}

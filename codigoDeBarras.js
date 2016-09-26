@@ -12,12 +12,12 @@ var BARS = [ 212222, 222122, 222221, 121223, 121322, 131222, 122213,
    134111, 111242, 121142, 121241, 114212, 124112, 124211, 411212,
    421112, 421211, 212141, 214121, 412121, 111143, 111341, 131141,
    114113, 114311, 411113, 411311, 113141, 114131, 311141, 411131,
-   211412, 211214, 211232, 23311120 ], START_BASE = 38, STOP = 106; 
+   211412, 211214, 211232, 23311120 ], START_BASE = 38, STOP = 106;
 
 var fromType = {
    A : function(charCode) {
       if (charCode >= 0 && charCode < 32)
-         return charCode + 64;  
+         return charCode + 64;
       if (charCode >= 32 && charCode < 96)
          return charCode - 32;
       return charCode;
@@ -36,7 +36,7 @@ function code128(code, allSpace, barcodeType) {
    if (barcodeType == undefined)
       barcodeType = code128Detect(code);
    if (allSpace == undefined)
-      allSpace = 180;  
+      allSpace = 180;
    if (barcodeType == 'C' && code.length % 2 == 1)
       code = '0' + code;
 
@@ -44,7 +44,7 @@ function code128(code, allSpace, barcodeType) {
    var b = a.join('');
    var sb = [];
    var codeBarSpace = 2;
-    //alert(b + " - " + b.length);  
+    //alert(b + " - " + b.length);
 
    for ( var pos = 0; pos < b.length; pos += 2) {
       sb.push(' <div class="divCode bar' + b.charAt(pos) + ' space' + b.charAt(pos + 1) + '"></div>');
@@ -54,7 +54,7 @@ function code128(code, allSpace, barcodeType) {
 
    var margin = (parseInt(allSpace)-codeBarSpace)/2;
 
-   return '<div width="' + codeBarSpace + 'px" style="margin: 0 ' + margin + ';">' + sb.join('') + '<br/><br/><label class="labelCode">' + code + '</label></div>';
+   return '<div class="codigo" width="' + codeBarSpace + 'px" style="margin: 0 ' + margin + ';">' + sb.join('') + '<br/><br/><label class="labelCode">' + code + '</label></div>';
 }
 
 function code128Detect(code) {
@@ -80,7 +80,7 @@ function parseBarcode(barcode, barcodeType) {
    bars.add(START_BASE + barcodeType.charCodeAt(0));
 
    for ( var i = 0; i < barcode.length; i++) {
-      var code = barcodeType == 'C' ? +barcode.substr(i++, 2) : barcode .charCodeAt(i); converted = fromType[barcodeType](code);  
+      var code = barcodeType == 'C' ? +barcode.substr(i++, 2) : barcode .charCodeAt(i); converted = fromType[barcodeType](code);
 
       if (isNaN(converted) || converted<0 || converted>106)
          throw new Error( format("Unrecognized character (%1) at position %2 in code '%3'.", code, i, barcode));
