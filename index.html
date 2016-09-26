@@ -1,0 +1,19 @@
+<html>
+<head>
+        <title></title>
+		<link href="imprimirCodigoDeBarras.css" type="text/css" rel="stylesheet"/>
+        <script src="codigoDeBarras.js" type="text/javascript" ></script>
+        
+		
+</head>
+<body>
+<script>
+
+                var codebar = 'NP12345678';
+                var barCode = code128(codebar, '273', 'A');
+                //alert(barCode);
+                window.document.write(barCode);
+
+</script>
+</body>
+</html>
