@@ -3,13 +3,13 @@
         <title></title>
 		<link href="imprimirCodigoDeBarras.css" type="text/css" rel="stylesheet"/>
         <script src="codigoDeBarras.js" type="text/javascript" ></script>
-        
-		
+
+
 </head>
 <body>
 <script>
 
-                var codebar = 'NP12345678';
+                var codebar = 'NP'+Math.floor(Math.random() * (99999999 - 10000000 + 1));
                 var barCode = code128(codebar, '273', 'A');
                 //alert(barCode);
                 window.document.write(barCode);
