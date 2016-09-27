@@ -9,7 +9,7 @@
 <body>
 <script>
 
-                var codebar = 'NP'+Math.floor(Math.random() * (99999999 - 10000000 + 1));
+                var codebar = 'NP'+Math.floor(Math.random() * (9999999999 - 1000000000 + 1));
                 var barCode = code128(codebar, '273', 'A');
                 //alert(barCode);
                 window.document.write(barCode);
