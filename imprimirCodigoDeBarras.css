@@ -1,7 +1,14 @@
 @CHARSET "UTF-8";
+body{
+  background: linear-gradient(177deg, rgba(13,115,68,1) 0%, rgba(13,115,68,1) 33%, rgba(0,128,128,1) 100%) repeat-X;
+  overflow: hidden;
+}
 
 .codigo{
      position: relative;
+     top:50%;
+     left:50%;
+     margin:-50px 0 0 -100px !important;
 }
 
  .divCode {
